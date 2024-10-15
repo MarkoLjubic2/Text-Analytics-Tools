@@ -1,0 +1,46 @@
+<h2>Entity Extraction Tool</h2>
+
+<form (ngSubmit)="extractEntities()">
+  <div>
+    <label for="textInput">Enter Text:</label>
+    <textarea id="textInput" name="textInput" [(ngModel)]="inputText" rows="5"></textarea>
+  </div>
+
+  <div>
+    <label for="confidenceSlider">Minimum Confidence:</label>
+    <input type="range" id="confidenceSlider" name="confidenceSlider" min="0" max="1" step="0.01" [(ngModel)]="minConfidence">
+    <span>{{ minConfidence }}</span>
+  </div>
+
+  <div>
+    <label>Include:</label><br>
+    <label><input type="checkbox" name="includeImages" [(ngModel)]="includeImages"> Images</label><br>
+    <label><input type="checkbox" name="includeAbstract" [(ngModel)]="includeAbstract"> Abstract</label><br>
+    <label><input type="checkbox" name="includeCategories" [(ngModel)]="includeCategories"> Categories</label>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<div *ngIf="result">
+  <div *ngFor="let annotation of result.annotations" class="mb-2">
+
+    <p>Label: {{ annotation.title }}</p>
+
+    <div *ngIf="annotation.abstract">
+      <p>Abstract: {{ annotation.abstract }}</p>
+    </div>
+
+    <div *ngIf="annotation.categories?.length">
+      <p>Categories: {{ annotation.categories.join(', ') }}</p>
+    </div>
+
+    <div *ngIf="annotation.image">
+      <img [src]="annotation.image.thumbnail" alt="Annotation Image"/>
+    </div>
+
+    <hr class="dashed"/>
+
+  </div>
+</div>
+
