@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {EEResult} from "../../model";
+import {EntityExtractionResult} from "../../model";
 import {RestService} from "../../services/rest-service";
 
 @Component({
@@ -16,7 +16,7 @@ export class EntityExtractionComponent implements OnInit{
   includeAbstract: boolean = false;
   includeCategories: boolean = false;
 
-  result : EEResult | undefined;
+  result : EntityExtractionResult | undefined;
 
   constructor(private restService: RestService) {}
 
