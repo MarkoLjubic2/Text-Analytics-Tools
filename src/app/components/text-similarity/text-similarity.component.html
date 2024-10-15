@@ -1,0 +1,22 @@
+<div>
+  <h2>Text Similarity</h2>
+
+  <div>
+    <form (submit)="submit()" class="mb-5">
+      <div class="form-group mb-2">
+        <label for="text1">Text 1:</label>
+        <textarea class="form-control" id="text1" name="text1" rows="6" [(ngModel)]="text1"></textarea>
+      </div>
+      <div class="form-group mb-2">
+        <label for="text2">Text 2:</label>
+        <br>
+        <textarea class="form-control" id="text2" name="text2" rows="6" [(ngModel)]="text2"></textarea>
+      </div>
+
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <div *ngIf="similarity !== '';" style="font-size: 1.2em; padding: 10px;">Text similarity is: {{ similarity }}</div>
+</div>

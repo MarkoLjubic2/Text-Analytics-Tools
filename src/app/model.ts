@@ -1,16 +1,44 @@
 // Entity Extraction
-export class EEImage {
-  full: string = ''
-  thumbnail: string = ''
+
+export interface EntityExtractionImage {
+  thumbnail: string
 }
 
-export class EEItem {
-  title: string = ''
-  abstract: string = ''
-  categories: [] = []
-  image: EEImage = new EEImage
+export interface EntityExtractionItem {
+  title: string
+  abstract: string
+  categories: []
+  image: EntityExtractionImage
 }
 
-export interface EEResult {
-  annotations: EEItem[]
+export interface EntityExtractionResult {
+  annotations: EntityExtractionItem[]
+}
+
+//Text Similarity
+
+export interface TextSimilarityResult {
+  similarity: string
+}
+
+//Language Detection
+
+export interface LanguageDetectionResult {
+  detectedLangs: LanguageDetectionItem[]
+}
+
+export interface LanguageDetectionItem {
+  lang: string
+  confidence: string
+}
+
+//Sentiment Analysis
+
+export interface SentimentAnalysisResultItem {
+  score: number;
+  type: string;
+}
+
+export interface SentimentAnalysisResult {
+  sentiment: SentimentAnalysisResultItem;
 }
