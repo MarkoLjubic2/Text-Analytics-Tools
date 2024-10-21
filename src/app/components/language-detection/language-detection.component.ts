@@ -21,9 +21,7 @@ export class LanguageDetectionComponent implements OnInit {
     this.restService.submitLanguageDetection(this.text, this.clean)
       .subscribe(result => {
         this.result = [];
-        console.log(result);
         result.detectedLangs.forEach(item => {
-          console.log(item.lang + ' (' + item.confidence + ')');
           this.result.push(item.lang + ' (' + item.confidence + ')');
         })
       });

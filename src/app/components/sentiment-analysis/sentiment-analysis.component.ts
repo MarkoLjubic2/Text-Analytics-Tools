@@ -25,7 +25,6 @@ export class SentimentAnalysisComponent implements OnInit {
         this.type = result.sentiment.type;
         this.score = result.sentiment.score;
         this.color = this.getColor(this.score);
-        console.log('Sentiment analysis result:', this.color);
       });
   }
 
