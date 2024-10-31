@@ -7,17 +7,6 @@ This single-page web application provides text analytics functionalities, includ
 - **Language Detection**: Identifying the language of a given text.
 - **Sentiment Analysis**: Analyzing the sentiment of a text as positive, neutral, or negative.
 
-## Table of Contents
-
-- [Features](#features)
-  - [Entity Extraction](#entity-extraction)
-  - [Text Similarity](#text-similarity)
-  - [Language Detection](#language-detection)
-  - [Sentiment Analysis](#sentiment-analysis)
-  - [History Tracking](#history-tracking)
-- [Usage](#usage)
-- [Technical Requirements](#technical-requirements)
-
 ## Features
 
 ### Entity Extraction
